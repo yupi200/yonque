@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <link href="//cdnjs.cloudflare.com" rel="dns-prefetch"/>
+    <link href="//fonts.googleapis.com" rel="dns-prefetch"/>
+    <link href="//fonts.gstatic.com" rel="dns-prefetch"/>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" rel="stylesheet"/>
+    <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;subset=latin-ext" rel="stylesheet"/>
+    <meta charset="utf-8" />
+    <style>
+        body{ position: relative; font-family: sans-serif; }
+        #channel-detail{ background: rgba(0,0,0,.3); display: none; z-index: 11; position: absolute; top: 0; left: 0; right: 0; padding: 20px; }
+        #channel-detail h1{ color: #fff; font-size: 20px; margin: 0; }
+        body:hover #channel-detail {
+            display: block;
+        }
+        .jw-logo-top-left {
+            top: 20px!important;
+        }
+        @media screen and (max-width: 680px) {
+#channel-detail h1{
+           font-size: 14px;
+        }
+        }
+    </style>
+</head>
+<body oncontextmenu="return !1">
+    <div id="channel-detail">
+    </div>
+    <div id="player"></div>
+    <script src="https://cdn.jsdelivr.net/gh/clappr/clappr@latest/dist/clappr.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="js.js"></script>
+      <script>
+
+
+      	var url_string = window.location.href;
+var url = new URL(url_string);
+var cid = url.searchParams.get("id");
+var ctitle = url.searchParams.get("title");
+document.getElementById("channel-detail").innerHTML = "<h1>"+ctitle+"</h1>";
+ 
+
+        window.config={ adv:{enabled:0,link:"",parentId:"div#player",poster:"",skipOffset:"8",source:""},match:{parentId:"div#player",position:"top-right",poster:"",source:"https://linear-452.frequency.stream:443/452/hls/master/playlist_1024x576.m3u8",watermark:"https://cdnx.assetstmedia.net/cdn/pulibet/logo.png",watermarkLink:"http://"+window.location.hostname+"/"}} 
+            </script>
+</body>
+</html>
+
